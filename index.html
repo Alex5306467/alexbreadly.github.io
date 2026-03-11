@@ -4,41 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Breadly | Real Estate Audit Riviera Maya</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* ЦВЕТОВАЯ ПАЛИТРА С ТОЧНЫМ ЗОЛОТОМ ИЗ GAMMA */
         :root {
-            --bg-color: #121212;
-            --bg-accent: #1a1a1a;
-            --accent-gold: #c5a059;
-            --text-main: #ffffff;
-            --text-dim: #a0a0a0;
+            --bg-color: #111111;      /* Глубокий charcoal/антрацит (sampled from image_4.png) */
+            --bg-accent: #1a1a1a;     /* Чуть светлее для карточек */
+            --accent-gold: #c5a059;   /* Точное золото (sampled from image_4.png) */
+            --text-main: #ffffff;     /* Чистый белый для заголовков */
+            --text-dim: #cccccc;      /* Приглушенный белый для описаний */
         }
 
         body {
             margin: 0; padding: 0;
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', sans-serif; /* Основной шрифт */
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Общие стили для секций */
         section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; margin-top: 0; }
         p { color: var(--text-dim); font-weight: 300; margin-bottom: 30px; }
 
+        /* --- КНОПКИ --- */
         .btn {
             display: inline-block;
             padding: 16px 32px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             transition: all 0.2s ease;
             cursor: pointer;
             border: none;
+            box-sizing: border-radius;
         }
-        .btn-gold { background-color: var(--accent-gold); color: #000; }
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #000; /* Черный текст на золотой кнопке */
+        }
         .btn-gold:hover { background-color: #dcb66f; transform: translateY(-2px); }
         
         .btn-outline {
@@ -48,30 +54,88 @@
         }
         .btn-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        .hero { display: flex; flex-direction: column; align-items: center; text-align: left; padding-top: 100px; padding-bottom: 100px; }
-        .hero-content { max-width: 600px; flex: 1; }
-        .hero-image { max-width: 100%; height: auto; margin-top: 40px; border-radius: 8px; }
-        .hero h1 { font-size: 3rem; color: var(--accent-gold); margin-bottom: 5px; }
-        .hero h2 { font-size: 1.5rem; font-family: 'Inter', sans-serif; color: var(--text-main); font-weight: 400; margin-bottom: 30px; }
-        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        /* --- 1. HERO SECTION (С ТОЧНОЙ ТИПОГРАФИКОЙ ИЗ IMAGE_4.PNG) --- */
+        .hero {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; /* Центрировано, как на скринах */
+            padding-top: 100px; padding-bottom: 100px;
+        }
+        .hero-content { max-width: 800px; flex: 1; }
+        .hero-image {
+            max-width: 100%; height: auto; margin-top: 40px;
+            border-radius: 8px; /* Легкое закругление */
+            filter: grayscale(100%); /* Монохром для Quiet Luxury */
+        }
+        
+        /* Имя: ТОЧНЫЙ ШРИФТ Playfair Display (Serif), ТОЧНЫЙ ЦВЕТ Золото */
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 4rem; /* Крупно, как в Gamma */
+            color: var(--accent-gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        /* Подзаголовок: ТОЧНЫЙ ШРИФТ Montserrat (Sans-Serif), ТОЧНЫЙ ЦВЕТ Белый, ТОЧНЫЙ letter-spacing */
+        .hero h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2rem;
+            color: var(--text-main);
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em; /* Расставляем буквы широко, как в Gamma */
+        }
+        
+        /* Описание */
+        .hero p { font-size: 1.15rem; color: #e0e0e0; }
+        
+        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin-top: 40px;}
 
-        .approach h2 { color: var(--accent-gold); text-align: left; margin-bottom: 50px; }
+        /* --- 2. AUDITOR APPROACH --- */
+        .approach h2 { font-family: 'Montserrat', sans-serif; color: var(--accent-gold); text-align: left; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 0.1em; }
         .grid-3 { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .card { background-color: var(--bg-accent); padding: 30px; border-radius: 8px; border: 1px solid #333; }
-        
-        .projects h2 { text-align: left; margin-bottom: 50px; }
-        .project-card { position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 30px; }
-        .project-img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease; }
-        .project-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
+        .card {
+            background-color: var(--bg-accent);
+            padding: 30px; border-radius: 8px;
+            border: 1px solid #333; transition: border-color 0.3s ease;
+        }
+        .card:hover { border-color: var(--accent-gold); }
+        .card h3 { font-family: 'Montserrat', sans-serif; color: var(--accent-gold); font-size: 1.4rem; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .card p { font-size: 0.95rem; margin-bottom: 0; }
 
-        .cta { text-align: center; background-color: var(--bg-accent); border-radius: 12px; padding: 60px 20px; margin-top: 60px; }
-        .cta h2 { font-size: 2rem; color: var(--accent-gold); }
+        /* --- 3. FEATURED PROJECTS --- */
+        .projects h2 { font-family: 'Montserrat', sans-serif; text-align: left; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 0.1em; }
+        .project-card { position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 30px; }
+        .project-img {
+            width: 100%; height: 300px;
+            object-fit: cover; /* Чтобы картинка не растягивалась */
+            transition: transform 0.5s ease;
+            filter: grayscale(100%); /* Пока placeholder, монохром */
+        }
+        .project-card:hover .project-img { transform: scale(1.05); filter: grayscale(0%); }
+        .project-info {
+            position: absolute; bottom: 0; left: 0; width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+        }
+        .project-info h3 { font-family: 'Montserrat', sans-serif; margin: 0; font-size: 1.3rem; color: #fff; text-transform: uppercase; }
+        .project-info p { margin: 5px 0 0; font-size: 0.9rem; color: #ddd; }
+
+        /* --- 4. CALL TO ACTION --- */
+        .cta { text-align: center; background-color: var(--bg-accent); border-radius: 12px; margin-top: 60px; margin-bottom: 60px; padding: 100px 40px; }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 10px; color: var(--accent-gold); text-transform: uppercase;}
+        .cta p { max-width: 500px; margin: 0 auto 40px auto; font-size: 1.1rem; }
         
+        /* --- FOOTER --- */
         footer { text-align: center; padding: 40px 20px; border-top: 1px solid #333; color: #555; font-size: 0.8rem; }
 
+        /* --- АДАПТИВНОСТЬ ПОД ДЕСКТОП --- */
         @media (min-width: 768px) {
-            .hero { flex-direction: row; justify-content: space-between; gap: 50px; }
+            section { padding: 100px 40px; }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
+            .cta { padding: 120px 40px; }
         }
     </style>
 </head>
@@ -87,22 +151,22 @@
                 <a href="https://www.youtube.com/@AlexBreadly" class="btn btn-outline">YouTube Audits</a>
             </div>
         </div>
-        <img src="https://via.placeholder.com/600x800/1a1a1a/c5a059?text=Alex+Photo" alt="Alex Breadly" class="hero-image">
+        <img src="https://via.placeholder.com/800x1000/1a1a1a/c5a059?text=Alex+Breadly+Photo" alt="Alex Breadly" class="hero-image">
     </section>
 
     <section class="approach">
         <h2>THE AUDITOR’S APPROACH</h2>
         <div class="grid-3">
             <div class="card">
-                <h3 style="color: var(--accent-gold);">Construction Quality</h3>
+                <h3>Construction Quality</h3>
                 <p>No more "paper houses". We check wall thickness, noise isolation, and finishing materials.</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent-gold);">Strategic Investment</h3>
+                <h3>Strategic Investment</h3>
                 <p>Analyze pre-sale vs. ready-to-move ROI. Focus on high-yield models like 30/70 payment plans.</p>
             </div>
             <div class="card">
-                <h3 style="color: var(--accent-gold);">Living Comfort</h3>
+                <h3>Living Comfort</h3>
                 <p>Quiet Luxury only. We audit for ventilation, location, and that premium "at-home" feeling.</p>
             </div>
         </div>
@@ -112,15 +176,15 @@
         <h2>FEATURED PROJECTS</h2>
         <div class="grid-3">
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Palmara" class="project-img">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Palmara" class="project-img">
                 <div class="project-info"><h3>PALMARA</h3><p>Ready to move | Quiet villas</p></div>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Nubba" class="project-img">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Nubba" class="project-img">
                 <div class="project-info"><h3>NUBBA</h3><p>Pre-sale 2027 | 30/70 Plan</p></div>
             </div>
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Simca" class="project-img">
+                <img src="https://via.placeholder.com/600x400/1a1a1a/c5a059?text=Simca" class="project-img">
                 <div class="project-info"><h3>SIMCA SELECTION</h3><p>Top developer review</p></div>
             </div>
         </div>
