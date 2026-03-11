@@ -6,34 +6,31 @@
     <title>Alex Breadly | Real Estate Audit Riviera Maya</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* ЦВЕТОВАЯ ПАЛИТРА THEME "CIGAR" */
         :root {
-            --bg-color: #121212;      /* Глубокий черный/антрацит */
-            --bg-accent: #1a1a1a;     /* Чуть светлее для карточек */
-            --accent-gold: #c5a059;   /* Золото для акцентов и кнопок */
-            --text-main: #ffffff;     /* Чистый белый для заголовков */
-            --text-dim: #a0a0a0;      /* Приглушенный белый для описаний */
+            --bg-color: #121212;
+            --bg-accent: #1a1a1a;
+            --accent-gold: #c5a059;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
         }
 
         body {
             margin: 0; padding: 0;
             background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: 'Inter', sans-serif; /* Основной шрифт */
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Общие стили для секций */
         section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 700; margin-top: 0; }
         p { color: var(--text-dim); font-weight: 300; margin-bottom: 30px; }
 
-        /* --- КНОПКИ --- */
         .btn {
             display: inline-block;
             padding: 16px 32px;
-            border-radius: 4px; /* Прямоугольные, как на скринах */
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -41,10 +38,7 @@
             cursor: pointer;
             border: none;
         }
-        .btn-gold {
-            background-color: var(--accent-gold);
-            color: #000;
-        }
+        .btn-gold { background-color: var(--accent-gold); color: #000; }
         .btn-gold:hover { background-color: #dcb66f; transform: translateY(-2px); }
         
         .btn-outline {
@@ -54,83 +48,30 @@
         }
         .btn-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        /* --- 1. HERO SECTION (Скрины 1, 2) --- */
-        .hero {
-            display: flex; flex-direction: column; align-items: center;
-            text-align: left; /* Текст влево, как на скринах */
-            padding-top: 100px; padding-bottom: 100px;
-        }
+        .hero { display: flex; flex-direction: column; align-items: center; text-align: left; padding-top: 100px; padding-bottom: 100px; }
         .hero-content { max-width: 600px; flex: 1; }
-        .hero-image {
-            max-width: 100%; height: auto; margin-top: 40px;
-            border-radius: 8px; /* Легкое закругление */
-            /* filter: grayscale(50%); /* Опционально: легкий ч/б эффект */
-        }
+        .hero-image { max-width: 100%; height: auto; margin-top: 40px; border-radius: 8px; }
         .hero h1 { font-size: 3rem; color: var(--accent-gold); margin-bottom: 5px; }
         .hero h2 { font-size: 1.5rem; font-family: 'Inter', sans-serif; color: var(--text-main); font-weight: 400; margin-bottom: 30px; }
-        .hero p { font-size: 1.1rem; }
         .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
 
-        /* --- 2. AUDITOR APPROACH (Скрин 3) --- */
         .approach h2 { color: var(--accent-gold); text-align: left; margin-bottom: 50px; }
         .grid-3 { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .card {
-            background-color: var(--bg-accent);
-            padding: 30px; border-radius: 8px;
-            border: 1px solid #333; transition: border-color 0.3s ease;
-        }
-        .card:hover { border-color: var(--accent-gold); }
-        .card h3 { color: var(--accent-gold); font-size: 1.4rem; margin-bottom: 15px; }
-        .card p { font-size: 0.95rem; margin-bottom: 0; }
-
-        /* --- 3. FEATURED PROJECTS (Скрин 4) --- */
+        .card { background-color: var(--bg-accent); padding: 30px; border-radius: 8px; border: 1px solid #333; }
+        
         .projects h2 { text-align: left; margin-bottom: 50px; }
         .project-card { position: relative; overflow: hidden; border-radius: 8px; margin-bottom: 30px; }
-        .project-img {
-            width: 100%; height: 250px;
-            object-fit: cover; /* Чтобы картинка не растягивалась */
-            transition: transform 0.5s ease;
-        }
-        .project-card:hover .project-img { transform: scale(1.05); }
-        .project-info {
-            position: absolute; bottom: 0; left: 0; width: 100%;
-            padding: 20px;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-        }
-        .project-info h3 { margin: 0; font-size: 1.3rem; color: #fff; }
-        .project-info p { margin: 5px 0 0; font-size: 0.9rem; color: #ddd; }
+        .project-img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.5s ease; }
+        .project-info { position: absolute; bottom: 0; left: 0; width: 100%; padding: 20px; background: linear-gradient(to top, rgba(0,0,0,0.8), transparent); }
 
-        /* --- 4. WHY ALEX BREADLY --- */
-        .why { display: flex; flex-direction: column; align-items: center; gap: 40px; }
-        .why h2 { color: var(--accent-gold); align-self: flex-start; }
-        .why-content { flex: 1; }
-        .why-list { list-style: none; padding: 0; margin: 0; }
-        .why-list li {
-            position: relative; padding-left: 30px; margin-bottom: 15px;
-            color: var(--text-dim); font-weight: 300;
-        }
-        .why-list li::before {
-            content: '✓'; position: absolute; left: 0;
-            color: var(--accent-gold); font-weight: 700;
-        }
-
-        /* --- 5. CALL TO ACTION (Скрин 5) --- */
-        .cta { text-align: center; background-color: var(--bg-accent); border-radius: 12px; margin-top: 60px; margin-bottom: 60px; }
-        .cta h2 { font-size: 2rem; margin-bottom: 10px; color: var(--accent-gold); }
-        .cta p { max-width: 500px; margin: 0 auto 40px auto; }
+        .cta { text-align: center; background-color: var(--bg-accent); border-radius: 12px; padding: 60px 20px; margin-top: 60px; }
+        .cta h2 { font-size: 2rem; color: var(--accent-gold); }
         
-        /* --- FOOTER --- */
         footer { text-align: center; padding: 40px 20px; border-top: 1px solid #333; color: #555; font-size: 0.8rem; }
 
-        /* --- АДАПТИВНОСТЬ ПОД ДЕСКТОП --- */
         @media (min-width: 768px) {
-            section { padding: 80px 40px; }
-            .hero { flex-direction: row; justify-content: space-between; gap: 50px; text-align: left; }
-            .hero-content { max-width: 50%; }
-            .hero-image { max-width: 45%; margin-top: 0; }
+            .hero { flex-direction: row; justify-content: space-between; gap: 50px; }
             .grid-3 { grid-template-columns: repeat(3, 1fr); }
-            .why { flex-direction: row-reverse; gap: 60px; }
-            .cta { padding: 80px 40px; }
         }
     </style>
 </head>
@@ -142,8 +83,8 @@
             <h2>REAL ESTATE AUDIT</h2>
             <p>I don't sell dreams, I audit reality. 8 years of international experience from Dubai to Mexico. Providing honest reviews of quality, noise levels, and ROI.</p>
             <div class="hero-btns">
-                <a href="#" class="btn btn-gold">Contact on WhatsApp</a>
-                <a href="#" class="btn btn-outline">YouTube Audits</a>
+                <a href="https://wa.me/529842532860" class="btn btn-gold">WhatsApp Consultation</a>
+                <a href="https://www.youtube.com/@AlexBreadly" class="btn btn-outline">YouTube Audits</a>
             </div>
         </div>
         <img src="https://via.placeholder.com/600x800/1a1a1a/c5a059?text=Alex+Photo" alt="Alex Breadly" class="hero-image">
@@ -153,73 +94,46 @@
         <h2>THE AUDITOR’S APPROACH</h2>
         <div class="grid-3">
             <div class="card">
-                <h3>Construction Quality</h3>
-                <p>No more "paper houses". We check wall thickness, noise isolation, and finishing materials before you commit.</p>
+                <h3 style="color: var(--accent-gold);">Construction Quality</h3>
+                <p>No more "paper houses". We check wall thickness, noise isolation, and finishing materials.</p>
             </div>
             <div class="card">
-                <h3>Strategic Investment</h3>
-                <p>Analyze pre-sale vs. ready-to-move ROI. Focus on high-yield models like 30/70 payment plans for 2027.</p>
+                <h3 style="color: var(--accent-gold);">Strategic Investment</h3>
+                <p>Analyze pre-sale vs. ready-to-move ROI. Focus on high-yield models like 30/70 payment plans.</p>
             </div>
             <div class="card">
-                <h3>Living Comfort</h3>
+                <h3 style="color: var(--accent-gold);">Living Comfort</h3>
                 <p>Quiet Luxury only. We audit for ventilation, location, and that premium "at-home" feeling.</p>
             </div>
         </div>
     </section>
 
     <section class="projects">
-        <h2>FEATURED PROJECTS: THE SELECTION</h2>
+        <h2>FEATURED PROJECTS</h2>
         <div class="grid-3">
-            
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Palmara" alt="Palmara" class="project-img">
-                <div class="project-info">
-                    <h3>PALMARA</h3>
-                    <p>Ready to move | Quiet villas</p>
-                </div>
+                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Palmara" class="project-img">
+                <div class="project-info"><h3>PALMARA</h3><p>Ready to move | Quiet villas</p></div>
             </div>
-
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Nubba" alt="Nubba" class="project-img">
-                <div class="project-info">
-                    <h3>NUBBA</h3>
-                    <p>Pre-sale 2027 | 30/70 Plan</p>
-                </div>
+                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Nubba" class="project-img">
+                <div class="project-info"><h3>NUBBA</h3><p>Pre-sale 2027 | 30/70 Plan</p></div>
             </div>
-
             <div class="project-card">
-                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Simca" alt="Simca" class="project-img">
-                <div class="project-info">
-                    <h3>SIMCA SELECTION</h3>
-                    <p>Top developer review</p>
-                </div>
+                <img src="https://via.placeholder.com/400x250/1a1a1a/c5a059?text=Simca" class="project-img">
+                <div class="project-info"><h3>SIMCA SELECTION</h3><p>Top developer review</p></div>
             </div>
-
-        </div>
-    </section>
-
-    <section class="why">
-        <img src="https://via.placeholder.com/600x600/1a1a1a/c5a059?text=Alex+Portrait" alt="Why Alex" class="hero-image">
-        <div class="why-content">
-            <h2>WHY ALEX BREADLY</h2>
-            <ul class="why-list">
-                <li>8 years in real estate (Dubai, Mexico).</li>
-                <li>Auditor approach: no 'fluff', only data.</li>
-                <li>Corporate background in Heineken (systematic approach).</li>
-                <li>Exclusive focus on quiet, high-quality projects.</li>
-            </ul>
         </div>
     </section>
 
     <section class="cta">
-        <h2>BOOK YOUR PRIVATE AUDIT CONSULTATION</h2>
-        <p>Get a clear strategy for your Mexican property investment or lifestyle purchase.</p>
-        <a href="#" class="btn btn-gold">WhatsApp Consultation</a>
+        <h2>BOOK YOUR PRIVATE AUDIT</h2>
+        <p>Get a clear strategy for your Mexican property investment.</p>
+        <a href="https://wa.me/529842532860" class="btn btn-gold">WhatsApp Consultation</a>
     </section>
 
     <footer>
-        <p>Alex Breadly | Real Estate Audit<br>
-        Riviera Maya | Mexico | 2026</p>
+        <p>Alex Breadly | 2026<br>Playa del Carmen, Mexico</p>
     </footer>
 
 </body>
