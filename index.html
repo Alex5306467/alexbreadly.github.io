@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
         :root {
             --bg-color: #0d0d0d;
             --card-bg: #161616;
-            --accent-gold: #d3b17d; /* Тот самый благородный песочный */
+            --accent-gold: #d3b17d; /* The exact bronze-gold from Gamma */
             --text-white: #f5f5f5;
             --text-dim: #999999;
             --border: rgba(211, 177, 125, 0.2);
@@ -26,7 +26,7 @@
 
         section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; }
 
-        /* --- HERO --- */
+        /* --- HERO SECTION --- */
         .hero {
             min-height: 90vh;
             display: flex;
@@ -50,7 +50,7 @@
             font-size: clamp(0.7rem, 2vw, 0.9rem);
             font-weight: 300;
             text-transform: uppercase;
-            letter-spacing: 0.5em; /* Тот самый люксовый разлет */
+            letter-spacing: 0.5em; /* Premium air spacing */
             margin-top: 20px;
             color: var(--text-white);
         }
@@ -80,7 +80,7 @@
         .btn-outline { border: 1px solid var(--border); color: var(--text-white); }
         .btn-outline:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 
-        /* --- APPROACH --- */
+        /* --- AUDITOR'S APPROACH --- */
         .section-label {
             color: var(--accent-gold);
             text-transform: uppercase;
@@ -112,7 +112,7 @@
         }
         .card p { font-weight: 300; color: var(--text-dim); font-size: 1rem; }
 
-        /* --- PROJECTS (SELECTION) --- */
+        /* --- THE SELECTION (PROJECT INDEX) --- */
         .project-item {
             border-bottom: 1px solid #222;
             padding: 40px 0;
@@ -135,13 +135,13 @@
         /* --- WHY SECTION --- */
         .why-content { max-width: 800px; }
         .why-item { margin-bottom: 40px; }
-        .why-item h4 { color: var(--accent-gold); margin-bottom: 10px; font-size: 1.2rem; }
+        .why-item h4 { color: var(--accent-gold); margin-bottom: 10px; font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.1em; }
 
-        /* --- CTA --- */
+        /* --- CALL TO ACTION --- */
         .cta { text-align: center; border-top: 1px solid #222; }
         .cta h2 { font-family: 'Playfair Display', serif; font-size: 4rem; color: var(--accent-gold); margin-bottom: 30px; }
 
-        footer { padding: 50px; text-align: center; color: #444; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; }
+        footer { padding: 50px; text-align: center; color: #444; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 3rem; }
@@ -155,34 +155,34 @@
     <section class="hero">
         <h1>Alex Breadly</h1>
         <h2>Real Estate Audit</h2>
-        <p>Я не продаю картинки — я аудирую реальность. 8 лет международного опыта от Дубая до Мексики. Честный разбор качества, шума и ликвидности.</p>
+        <p>I don't sell marketing brochures — I audit reality. 8 years of international expertise from Dubai to the Riviera Maya. Providing honest reviews of construction quality, noise levels, and real ROI.</p>
         <div class="hero-btns">
             <a href="https://wa.me/529842532860" class="btn btn-gold">WhatsApp Consultation</a>
-            <a href="https://www.youtube.com/@AlexBreadly" class="btn btn-outline">YouTube Audits</a>
+            <a href="https://www.youtube.com/@AlexBreadly" class="btn btn-outline">YouTube Channel</a>
         </div>
     </section>
 
     <section id="approach">
-        <span class="section-label">Методология</span>
+        <span class="section-label">Methodology</span>
         <h2 class="section-title">The Auditor’s Approach</h2>
         <div class="grid">
             <div class="card">
                 <h3>Construction Quality</h3>
-                <p>Хватит покупать «картонные дома». Проверка толщины стен, гидроизоляции и качества отделки до того, как вы внесете депозит.</p>
+                <p>Stop buying "paper houses". We audit wall thickness, waterproofing, and finish quality before you make a commitment.</p>
             </div>
             <div class="card">
                 <h3>Strategic Investment</h3>
-                <p>Анализ ликвидности стратегий 30/70. Мы считаем реальный ROI, а не тот, что обещает брошюра застройщика.</p>
+                <p>Analysis of 30/70 payment models. We calculate real liquidity and ROI forecasts, not just developer promises.</p>
             </div>
             <div class="card">
                 <h3>Living Comfort</h3>
-                <p>Quiet Luxury — это про тишину и приватность. Аудит локации на предмет шума, запахов и будущей застройки по соседству.</p>
+                <p>Quiet Luxury is about privacy. We audit locations for noise, smells, and future neighborhood developments.</p>
             </div>
         </div>
     </section>
 
     <section id="selection">
-        <span class="section-label">Портфель</span>
+        <span class="section-label">Portfolio</span>
         <h2 class="section-title">The Selection</h2>
         
         <div class="project-item">
@@ -195,32 +195,32 @@
         </div>
         <div class="project-item">
             <h4>Simca Selection</h4>
-            <span>Top Developer Audit</span>
+            <span>Top Developer Review</span>
         </div>
     </section>
 
     <section id="why">
-        <span class="section-label">Экспертиза</span>
+        <span class="section-label">Expertise</span>
         <h2 class="section-title">Why Alex Breadly</h2>
         <div class="why-content">
             <div class="why-item">
-                <h4>Системный подход</h4>
-                <p>Опыт работы в Heineken приучил меня к цифрам и стандартам. Я переношу этот порядок в хаотичный рынок недвижимости Мексики.</p>
+                <h4>Systematic Approach</h4>
+                <p>My background at Heineken taught me the value of standards and data. I bring that corporate rigor to the chaotic Mexican real estate market.</p>
             </div>
             <div class="why-item">
-                <h4>Опыт в Дубае</h4>
-                <p>3 года работы в крупнейшем девелопере Дубая позволяют мне видеть манипуляции застройщиков насквозь.</p>
+                <h4>Dubai Experience</h4>
+                <p>3 years working with Dubai's top developers gave me the ability to see through marketing tactics and identify true build quality.</p>
             </div>
             <div class="why-item">
-                <h4>Никакого шума</h4>
-                <p>Я живу в Плайе и знаю каждый район. Если в проекте будут шумные соседи или стройка под окном через год — вы узнаете об этом первым.</p>
+                <h4>Local Insight</h4>
+                <p>Living in Playa allows me to know every corner. If a project is near future construction or high-noise zones, you'll know it first.</p>
             </div>
         </div>
     </section>
 
     <section class="cta">
         <h2>Audit Reality</h2>
-        <p>Запишитесь на консультацию, чтобы получить честный отчет по выбранному объекту.</p>
+        <p>Book a private consultation to receive a transparent report on your selected property.</p>
         <a href="https://wa.me/529842532860" class="btn btn-gold">Book a Consultation</a>
     </section>
 
