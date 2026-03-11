@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
@@ -11,173 +12,365 @@
 
 <style>
 
+:root{
+
+--bg:#0E141B;
+--card:#2B3138;
+--gold:#E6D6C4;
+--muted:#B8A793;
+--accent:#B7683A;
+--accent-dark:#7A3F23;
+
+}
+
+*{
+box-sizing:border-box;
+}
+
 body{
+
 margin:0;
-background:#0E141B;
-color:#E6D6C4;
-font-family:Inter, sans-serif;
+font-family:Inter,sans-serif;
+background:var(--bg);
+color:var(--gold);
 line-height:1.6;
+
 }
 
-h1,h2,h3{
-font-family:"Cormorant Garamond", serif;
-font-weight:500;
+/* NAVBAR */
+
+.nav{
+
+position:fixed;
+top:0;
+width:100%;
+z-index:100;
+
+background:rgba(14,20,27,0.6);
+backdrop-filter:blur(12px);
+
+border-bottom:1px solid rgba(255,255,255,0.05);
+
 }
 
-section{
-padding:110px 10%;
+.nav-inner{
+
+max-width:1200px;
+margin:auto;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 9%;
+
 }
+
+.logo{
+
+font-family:"Cormorant Garamond",serif;
+font-size:22px;
+
+}
+
+.nav a{
+
+text-decoration:none;
+color:var(--gold);
+font-size:14px;
+margin-left:25px;
+
+}
+
+/* HERO */
 
 .hero{
-height:90vh;
-background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
-url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2000");
-background-size:cover;
-background-position:center;
+
+height:100vh;
+position:relative;
 display:flex;
 align-items:center;
+
+}
+
+.hero video{
+
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+
+}
+
+.hero-overlay{
+
+position:absolute;
+inset:0;
+background:linear-gradient(rgba(10,12,15,0.6),rgba(10,12,15,0.9));
+
+}
+
+.hero-content{
+
+position:relative;
+max-width:700px;
+margin-left:9%;
+
 }
 
 .hero h1{
+
+font-family:"Cormorant Garamond",serif;
 font-size:64px;
 margin-bottom:20px;
+
 }
 
 .hero p{
-max-width:650px;
-color:#B8A793;
+
+color:var(--muted);
 margin-bottom:35px;
+font-size:17px;
+
 }
 
+/* BUTTONS */
+
 .buttons{
+
 display:flex;
 gap:15px;
 flex-wrap:wrap;
+
 }
 
 .btn{
+
 padding:14px 26px;
 font-size:14px;
-text-decoration:none;
 border-radius:4px;
+text-decoration:none;
+transition:.3s;
+
 }
 
 .primary{
-background:#B7683A;
+
+background:var(--accent);
 color:white;
+
+}
+
+.primary:hover{
+
+background:#c27645;
+
 }
 
 .outline{
-border:1px solid #B7683A;
-color:#B7683A;
+
+border:1px solid var(--accent);
+color:var(--accent);
+
 }
 
-.center{
-text-align:center;
+.outline:hover{
+
+background:var(--accent);
+color:white;
+
 }
 
-.audit h2{
+/* SECTIONS */
+
+section{
+
+padding:120px 9%;
+
+}
+
+.container{
+
+max-width:1200px;
+margin:auto;
+
+}
+
+h2{
+
+font-family:"Cormorant Garamond",serif;
 font-size:42px;
-margin-bottom:10px;
+margin-bottom:15px;
+
 }
 
 .sub{
-color:#B8A793;
+
+color:var(--muted);
 max-width:700px;
-margin:auto;
+
 }
 
+/* STATS */
+
 .stats{
+
 display:flex;
-justify-content:space-between;
-margin-top:70px;
 gap:40px;
+margin-top:60px;
 flex-wrap:wrap;
+
 }
 
 .stat{
+
 flex:1;
-min-width:200px;
+min-width:220px;
+
 }
 
 .stat h3{
-font-size:52px;
-margin:0;
-}
 
-.stat p{
-font-weight:500;
-margin:10px 0;
+font-family:"Cormorant Garamond",serif;
+font-size:52px;
+
 }
 
 .stat span{
+
+color:var(--muted);
 font-size:14px;
-color:#B8A793;
+
 }
 
-.standard{
-max-width:900px;
-}
-
-.standard h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.approach{
-background:#B7683A;
-color:black;
-text-align:center;
-}
+/* CARDS */
 
 .cards{
+
 display:flex;
 gap:30px;
 margin-top:40px;
 flex-wrap:wrap;
+
 }
 
 .card{
-background:#2B3138;
+
+background:var(--card);
 padding:35px;
-border-radius:6px;
 flex:1;
-min-width:220px;
-color:#E6D6C4;
+border-radius:6px;
+
+transition:.4s;
+
 }
 
-.projects{
-background:#0E141B;
+.card:hover{
+
+transform:translateY(-8px);
+
 }
 
-.projects h2{
-font-size:42px;
-margin-bottom:10px;
-}
+/* PROJECTS */
 
 .project{
-border:1px solid #333;
-padding:30px;
+
+border:1px solid #343b42;
+padding:32px;
 flex:1;
-min-width:250px;
+border-radius:4px;
+
+transition:.4s;
+
+}
+
+.project:hover{
+
+border-color:var(--accent);
+transform:translateY(-6px);
+
 }
 
 .tag{
-display:inline-block;
-background:#7A3F23;
+
+background:var(--accent-dark);
 padding:6px 12px;
 font-size:12px;
-margin-bottom:12px;
+display:inline-block;
+margin-bottom:10px;
+
 }
+
+/* APPROACH */
+
+.approach{
+
+background:var(--accent);
+color:black;
+
+}
+
+/* FOOTER */
 
 footer{
-padding:60px 10%;
+
+padding:70px 9%;
 border-top:1px solid #333;
+
 }
 
-footer h2{
-margin-bottom:15px;
+footer p{
+
+color:var(--muted);
+
 }
+
+/* WHATSAPP BUTTON */
+
+.whatsapp{
+
+position:fixed;
+right:25px;
+bottom:25px;
+
+background:#25D366;
+color:white;
+
+width:56px;
+height:56px;
+
+border-radius:50%;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:28px;
+
+text-decoration:none;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.4);
+
+}
+
+/* ANIMATION */
+
+.fade{
+
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+
+}
+
+.fade.visible{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+/* MOBILE */
 
 @media(max-width:900px){
 
@@ -185,12 +378,20 @@ margin-bottom:15px;
 font-size:42px;
 }
 
+.cards{
+flex-direction:column;
+}
+
 .stats{
 flex-direction:column;
 }
 
-.cards{
-flex-direction:column;
+.nav-inner{
+padding:18px 6%;
+}
+
+section{
+padding:90px 6%;
 }
 
 }
@@ -201,23 +402,47 @@ flex-direction:column;
 
 <body>
 
+<!-- NAV -->
+
+<div class="nav">
+
+<div class="nav-inner">
+
+<div class="logo">Alex Breadly</div>
+
+<div>
+
+<a href="#">Home</a> <a href="#">Audits</a> <a href="#">Projects</a> <a href="#">Contact</a>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- HERO -->
 
 <section class="hero">
 
-<div>
+<video autoplay muted loop playsinline>
+
+<source src="https://cdn.coverr.co/videos/coverr-luxury-villa-3155/1080p.mp4" type="video/mp4">
+
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content fade">
 
 <h1>ALEX BREADLY | Real Estate Audit</h1>
 
 <p>
-I don't sell dreams, I audit reality. 8 years of international experience from Dubai to Mexico.
-Providing honest reviews of quality, noise levels, and ROI.
+I don't sell dreams, I audit reality. 8 years of international experience from Dubai to Mexico. Providing honest reviews of quality, noise levels, and ROI.
 </p>
 
 <div class="buttons">
 
-<a class="btn primary" href="#">Watch Video Audits on YouTube</a>
-
-<a class="btn outline" href="#">Get WhatsApp Consultation</a>
+<a class="btn primary" href="#">Watch Video Audits on YouTube</a> <a class="btn outline" href="#">Get WhatsApp Consultation</a>
 
 </div>
 
@@ -225,8 +450,11 @@ Providing honest reviews of quality, noise levels, and ROI.
 
 </section>
 
+<!-- AUDIT -->
 
-<section class="audit center">
+<section>
+
+<div class="container fade">
 
 <h2>Ready to Audit Your Next Investment?</h2>
 
@@ -234,53 +462,49 @@ Providing honest reviews of quality, noise levels, and ROI.
 Get direct access to honest, unfiltered property reviews — on YouTube or one-on-one via WhatsApp.
 </p>
 
-<div class="buttons" style="justify-content:center;margin-top:25px">
-
-<a class="btn primary" href="#">Watch Video Audits on YouTube</a>
-
-<a class="btn outline" href="#">Get WhatsApp Consultation</a>
-
-</div>
-
 <div class="stats">
 
 <div class="stat">
+
 <h3>8</h3>
+
 <p>Years of Experience</p>
+
 <span>International real estate expertise from Dubai to Mexico</span>
+
 </div>
 
 <div class="stat">
+
 <h3>30/70</h3>
+
 <p>Payment Plans</p>
+
 <span>Strategic pre-sale investment structures reviewed and vetted</span>
+
 </div>
 
 <div class="stat">
+
 <h3>2.9m</h3>
+
 <p>Ceiling Heights</p>
+
 <span>The kind of detail that separates quality builds from paper houses</span>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
-
-<section class="standard">
-
-<h2>The Alex Breadly Standard</h2>
-
-<p>
-Professional. Modern. Minimalist. High-end Real Estate aesthetic — every audit delivered
-with the precision of an international expert and the clarity of someone who has seen
-the best and worst the market has to offer.
-</p>
-
-</section>
-
+<!-- APPROACH -->
 
 <section class="approach">
+
+<div class="container fade">
 
 <h2>The Auditor's Approach</h2>
 
@@ -291,32 +515,45 @@ Three pillars that define every property review — no shortcuts, no compromises
 <div class="cards">
 
 <div class="card">
+
 <h3>Construction Quality</h3>
+
 <p>No more "paper houses"</p>
+
 </div>
 
 <div class="card">
+
 <h3>Strategic Investment</h3>
+
 <p>30/70 payment plans</p>
+
 </div>
 
 <div class="card">
+
 <h3>Living Comfort</h3>
+
 <p>Quiet Luxury</p>
+
+</div>
+
 </div>
 
 </div>
 
 </section>
 
+<!-- PROJECTS -->
 
-<section class="projects">
+<section>
+
+<div class="container fade">
 
 <h2>Featured Projects — The Selection</h2>
 
 <p class="sub">
-A curated audit of the most compelling real estate opportunities in the region,
-reviewed through the lens of quality, investment potential, and livability.
+A curated audit of the most compelling real estate opportunities in the region, reviewed through the lens of quality, investment potential, and livability.
 </p>
 
 <div class="cards">
@@ -327,10 +564,7 @@ reviewed through the lens of quality, investment potential, and livability.
 
 <h3>PALMARA</h3>
 
-<p>
-The best "Ready to Move" villa complex.
-Focus on silence and 2.9m ceilings.
-</p>
+<p>The best "Ready to Move" villa complex. Focus on silence and 2.9m ceilings.</p>
 
 </div>
 
@@ -340,10 +574,7 @@ Focus on silence and 2.9m ceilings.
 
 <h3>NUBBA</h3>
 
-<p>
-Smart investment strategy.
-Pre-sale prices with 30/70 payment scheme for 2027.
-</p>
+<p>Smart investment strategy. Pre-sale prices with 30/70 payment scheme for 2027.</p>
 
 </div>
 
@@ -353,9 +584,9 @@ Pre-sale prices with 30/70 payment scheme for 2027.
 
 <h3>SIMCA SELECTION</h3>
 
-<p>
-Reviewing the #1 developer in the region.
-</p>
+<p>Reviewing the #1 developer in the region.</p>
+
+</div>
 
 </div>
 
@@ -363,18 +594,41 @@ Reviewing the #1 developer in the region.
 
 </section>
 
+<!-- FOOTER -->
 
 <footer>
 
-<h2>ALEX BREADLY | Real Estate Audit</h2>
+<h2>Alex Breadly | Real Estate Audit</h2>
 
-<p style="color:#B8A793">
-I don't sell dreams, I audit reality. 8 years of international experience
-from Dubai to Mexico. Providing honest reviews of quality, noise levels, and ROI.
+<p>
+I don't sell dreams, I audit reality. 8 years of international experience from Dubai to Mexico. Providing honest reviews of quality, noise levels and ROI.
 </p>
 
 </footer>
 
+<a class="whatsapp" href="#">☎</a>
+
+<script>
+
+const elements=document.querySelectorAll(".fade")
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("visible")
+
+}
+
+})
+
+})
+
+elements.forEach(el=>observer.observe(el))
+
+</script>
 
 </body>
 </html>
